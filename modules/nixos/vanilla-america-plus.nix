@@ -7,7 +7,7 @@ let
   integrationDir = "${stateDir}/integration";
   credentialsDir = "${stateDir}/credentials";
   backupDir = "${stateDir}/backups";
-  gameBind = if cfg.networkScope == "lan" then "0.0.0.0" else "127.0.0.1";
+  gameBind = if cfg.networkScope == "lan" || cfg.networkScope == "tailscale" then "0.0.0.0" else "127.0.0.1";
 
   paper = pkgs.fetchurl {
     url = "https://fill-data.papermc.io/v1/objects/0de30efb024bc8b83c9c7d507d11802897ad8056b6110ec09fe1a91d126ccb54/paper-26.2-121.jar";
@@ -164,7 +164,7 @@ in
   options.services.vanillaAmericaPlus = {
     enable = lib.mkEnableOption "Vanilla America+ cross-platform server and local operations portal";
     networkScope = lib.mkOption {
-      type = lib.types.enum [ "loopback" "lan" ];
+      type = lib.types.enum [ "loopback" "lan" "tailscale" ];
       default = "loopback";
       description = "Bind game listeners to loopback, or explicitly expose only game ports to the LAN.";
     };
@@ -348,5 +348,7 @@ in
 
     networking.firewall.allowedTCPPorts = lib.mkIf (cfg.networkScope == "lan") [ 25565 ];
     networking.firewall.allowedUDPPorts = lib.mkIf (cfg.networkScope == "lan") [ 19132 ];
+    networking.firewall.interfaces.tailscale0.allowedTCPPorts = lib.mkIf (cfg.networkScope == "tailscale") [ 25565 ];
+    networking.firewall.interfaces.tailscale0.allowedUDPPorts = lib.mkIf (cfg.networkScope == "tailscale") [ 19132 ];
   };
 }

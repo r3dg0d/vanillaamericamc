@@ -110,7 +110,6 @@ and inspect startup. The portal Go dependency hash must change only when
 
 ## LAN exposure
 
-Change `networkScope = "loopback"` to `"lan"` only after deciding that LAN
-players should connect. Rebuild opens exactly 25565/TCP and 19132/UDP. Router,
+Set `networkScope = "tailscale"` for private tailnet players (the current host setting); use `"lan"` only after deciding that LAN players should connect. The tailscale mode opens exactly 25565/TCP and 19132/UDP on tailscale0, while lan opens them to the LAN. Router,
 DNS, CDN, public firewall, and live payments remain separate authorization
 boundaries and are not configured here.
