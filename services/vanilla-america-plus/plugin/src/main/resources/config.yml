@@ -1,0 +1,30 @@
+theme:
+  primary: "#0B1F3A"
+  accent: "#B22234"
+  ivory: "#F5F0E6"
+connection:
+  java: "localhost:25565"
+  bedrock: "localhost:19132"
+reports:
+  cooldown-seconds: 300
+  max-reason-length: 240
+  page-size: 8
+database:
+  path: "integration.db"
+entitlements:
+  poll-seconds: 10
+  allowed:
+    supporter_badge: "vaplus.cosmetic.supporter"
+    liberty_bell: "vaplus.event.liberty"
+celebration:
+  enabled: true
+  cooldown-seconds: 900
+  radius: 32
+facts:
+  interval-minutes: 20
+  entries:
+    - "Yellowstone became the world's first national park in 1872."
+    - "The Appalachian Trail crosses fourteen states."
+    - "The Golden Gate Bridge opened to pedestrians in 1937."
+    - "The transcontinental railroad was joined at Promontory Summit, Utah, in 1869."
+

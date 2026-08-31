@@ -1,0 +1,4 @@
+plugin/.gradle/
+plugin/build/
+portal/vanilla-america-plus-portal
+*.db*

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Vanilla America+ cross-platform survival server">
+  <title>Vanilla America+</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Vanilla America+ home">
+      <span class="brand-star" aria-hidden="true">★</span>
+      <span>Vanilla America<span class="gold">+</span></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" aria-label="Primary">
+      <a href="#about">About</a><a href="#features">Features</a><a href="#rules">Rules</a>
+      <a href="#status">Status</a><a href="#map">Map</a><a href="#shop">Shop</a>
+      <button class="text-button" id="staff-login" type="button">Staff</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Survival, from sea to shining sea</p>
+        <h1 id="hero-title">A wide-open world.<br><span>One shared frontier.</span></h1>
+        <p class="lede">Vanilla America+ keeps the survival rhythm intact, then adds thoughtful cross-play, community traditions, and accountable moderation.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#play">Start playing</a>
+          <a class="button secondary" href="/map/" target="_blank" rel="noreferrer">Explore the map</a>
+        </div>
+        <div class="live-chip" id="hero-status" role="status" aria-live="polite">
+          <span class="status-dot" aria-hidden="true"></span><span>Checking the frontier…</span>
+        </div>
+      </div>
+      <div class="landscape" aria-hidden="true">
+        <div class="sun"></div><div class="range back"></div><div class="range front"></div>
+        <div class="road"></div><div class="stars">★ ★ ★</div>
+      </div>
+    </section>
+
+    <section class="play-band" id="play" aria-labelledby="play-title">
+      <div><p class="eyebrow">Join the server</p><h2 id="play-title">Java or Bedrock. Same community.</h2></div>
+      <div class="address-grid">
+        <article class="address-card">
+          <span>Java Edition</span><strong id="java-address">localhost:25565</strong>
+          <button class="copy-button" data-copy="localhost:25565" type="button">Copy address</button>
+        </article>
+        <article class="address-card">
+          <span>Bedrock Edition</span><strong id="bedrock-address">localhost:19132</strong>
+          <button class="copy-button" data-copy="localhost:19132" type="button">Copy address</button>
+        </article>
+      </div>
+      <p class="fine-print">Local-only by default. Bedrock uses UDP port 19132. No client mod, launcher, shader, or resource pack is required.</p>
+    </section>
+
+    <section class="section split" id="about">
+      <div>
+        <p class="eyebrow">What the plus means</p>
+        <h2>Vanilla at heart.<br>Community by design.</h2>
+      </div>
+      <div class="prose">
+        <p>The landscape is yours to shape: ordinary gathering, building, redstone, exploration, and survival progression remain the center of play.</p>
+        <p>The “plus” is the civic layer around it—Java and Bedrock cross-play, a living map, transparent reports, reversible moderation, occasional cosmetic celebrations, and a shop that never sells competitive power.</p>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <p class="eyebrow">Built for the long haul</p>
+      <h2 id="features-title">A small, deliberate feature set.</h2>
+      <div class="feature-grid">
+        <article><span>01</span><h3>True cross-play</h3><p>Geyser and Floodgate bridge supported Bedrock clients to the Paper server without weakening Java account authentication.</p></article>
+        <article><span>02</span><h3>Living atlas</h3><p>BlueMap renders the world in 3D on a separate local route. If rendering is unavailable, the site remains usable.</p></article>
+        <article><span>03</span><h3>Accountable staff</h3><p>Reports and every staff outcome enter an immutable audit trail. Moderator and administrator authority remain separate.</p></article>
+        <article><span>04</span><h3>Vanilla-first events</h3><p>The Liberty Bell celebration uses restrained sounds, particles, and editable community notes—never destructive effects or paid power.</p></article>
+      </div>
+    </section>
+
+    <section class="section rules" id="rules" aria-labelledby="rules-title">
+      <div><p class="eyebrow">Community compact · version 1.0</p><h2 id="rules-title">Build freely. Treat people well.</h2></div>
+      <ol>
+        <li><strong>Respect the work.</strong><span>No destructive griefing, theft, or bypassing agreed boundaries.</span></li>
+        <li><strong>Respect the person.</strong><span>No harassment, hate, threats, doxxing, or sexual content.</span></li>
+        <li><strong>Play honestly.</strong><span>No cheats, exploit abuse, automation that harms service, or ban evasion.</span></li>
+        <li><strong>Keep it welcoming.</strong><span>Chat and builds must remain suitable for an all-ages community.</span></li>
+        <li><strong>Use the process.</strong><span>Report concerns with <code>/report</code>; staff actions are logged and reviewable.</span></li>
+      </ol>
+    </section>
+
+    <section class="section status-section" id="status" aria-labelledby="status-title">
+      <div><p class="eyebrow">Live status</p><h2 id="status-title">Frontier telegraph</h2></div>
+      <div class="status-panel" id="status-panel" aria-live="polite" aria-busy="true">
+        <div><span>State</span><strong id="status-state">Checking…</strong></div>
+        <div><span>Players</span><strong id="status-players">—</strong></div>
+        <div><span>Version</span><strong id="status-version">—</strong></div>
+        <div><span>Latency</span><strong id="status-latency">—</strong></div>
+      </div>
+      <p id="status-note">No player identities are published by this page.</p>
+    </section>
+
+    <section class="section map-callout" id="map">
+      <div><p class="eyebrow">BlueMap</p><h2>Read the ridgelines.<br>Find your way home.</h2>
+      <p>The map runs independently, so world rendering cannot take down the main site.</p></div>
+      <a class="button primary" href="/map/" target="_blank" rel="noreferrer">Open map in a new tab</a>
+    </section>
+
+    <section class="section shop" id="shop" aria-labelledby="shop-title">
+      <div class="test-banner" role="note"><strong>Test mode</strong> No payment provider is connected. Orders are local test records only.</div>
+      <p class="eyebrow">Support the commons</p>
+      <h2 id="shop-title">Cosmetics and community moments.</h2>
+      <p class="shop-intro">No loot boxes, paid power, competitive advantage, capes, or false scarcity. Prices below are test catalog values, not live offers.</p>
+      <div class="catalog" id="catalog" aria-live="polite"><p>Loading catalog…</p></div>
+      <form class="checkout" id="checkout-form">
+        <label for="player-uuid">Test player UUID</label>
+        <input id="player-uuid" name="player_uuid" autocomplete="off" placeholder="00000000-0000-0000-0000-000000000000" required>
+        <button class="button primary" type="submit">Record test order</button>
+        <p class="form-result" id="order-result" role="status"></p>
+      </form>
+    </section>
+
+    <section class="section support" id="support">
+      <p class="eyebrow">Support and contact</p><h2>Contact destination not configured.</h2>
+      <p>This local launch intentionally does not invent a Discord invitation or email address. Configure an approved contact method before public exposure.</p>
+    </section>
+
+    <section class="section staff-panel" id="staff-panel" hidden aria-labelledby="staff-title">
+      <div class="staff-heading">
+        <div><p class="eyebrow">Authenticated staff workspace</p><h2 id="staff-title">Operations desk</h2><p id="staff-identity"></p></div>
+        <button class="button secondary" id="logout" type="button">Sign out</button>
+      </div>
+      <div class="staff-grid">
+        <section class="staff-card" id="moderation-card">
+          <h3>Reports and moderation</h3>
+          <div id="reports-list"><p>No report data loaded.</p></div>
+          <form id="moderation-form">
+            <div class="field-row"><label>Action<select name="action"><option>warn</option><option>mute</option><option>kick</option><option>tempban</option></select></label>
+            <label>Duration seconds<input name="duration_seconds" type="number" min="0" max="2592000" value="3600"></label></div>
+            <label>Player<input name="target" maxlength="32" required></label>
+            <label>Reason<textarea name="reason" minlength="4" maxlength="240" required></textarea></label>
+            <button class="button primary" type="submit">Queue action</button><p id="moderation-result" role="status"></p>
+          </form>
+        </section>
+        <section class="staff-card admin-only" id="server-card" hidden>
+          <h3>Server lifecycle</h3>
+          <div class="button-row"><button data-server="start">Start</button><button data-server="restart">Restart</button><button data-server="stop" class="danger">Stop</button></div>
+          <h3>Allowlisted console</h3>
+          <pre id="console-output" tabindex="0" aria-label="Live server console">Console unavailable.</pre>
+          <form id="console-form"><label>Command<input name="command" maxlength="240" placeholder="list" required></label><button type="submit">Run</button></form>
+        </section>
+        <section class="staff-card admin-only" id="audit-card" hidden><h3>Immutable audit trail</h3><div id="audit-list"></div></section>
+        <section class="staff-card admin-only" id="users-card" hidden><h3>Create staff account</h3>
+          <form id="user-form"><label>Username<input name="username" minlength="3" maxlength="32" required></label>
+          <label>Role<select name="role"><option value="moderator">Moderator</option><option value="administrator">Administrator</option></select></label>
+          <label>Temporary password<input name="password" type="password" minlength="14" autocomplete="new-password" required></label>
+          <button type="submit">Create account</button><p id="user-result" role="status"></p></form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="login-dialog" aria-labelledby="login-title">
+    <form id="login-form">
+      <div class="dialog-heading"><h2 id="login-title">Staff sign in</h2><button type="button" id="close-login" aria-label="Close sign-in dialog">×</button></div>
+      <p>Local administrator and moderator accounts only.</p>
+      <label>Username<input name="username" autocomplete="username" required></label>
+      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+      <button class="button primary" type="submit">Sign in</button><p id="login-result" role="status"></p>
+    </form>
+  </dialog>
+
+  <footer>
+    <div class="brand"><span class="brand-star" aria-hidden="true">★</span><span>Vanilla America<span class="gold">+</span></span></div>
+    <p>NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
+    <p>Local test deployment · Usage guidelines reviewed August 30, 2026 · Operator contact not configured.</p>
+  </footer>
+</body>
+</html>
+

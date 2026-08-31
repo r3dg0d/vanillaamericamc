@@ -1,0 +1,47 @@
+name: VanillaAmericaPlus
+version: ${version}
+main: dev.vanillaamericaplus.VanillaAmericaPlusPlugin
+api-version: '1.21'
+description: Cross-platform identity, reporting, celebrations, and entitlement bridge for Vanilla America+
+authors: [VanillaAmericaPlus]
+softdepend: [floodgate, LuckPerms, PlaceholderAPI, BlueMap, Vault]
+commands:
+  va:
+    description: Open the Vanilla America+ guide or reload configuration.
+    usage: /va [reload]
+    aliases: [guide, helpva]
+    permission: vaplus.guide
+  rules:
+    description: Show the current server rules.
+    usage: /rules
+    permission: vaplus.rules
+  report:
+    description: Submit or manage a player report.
+    usage: /report <player> <reason> | /report <view|resolve|dismiss> <id> [note]
+    permission: vaplus.report
+  reports:
+    description: List open reports.
+    usage: /reports [page]
+    permission: vaplus.staff.reports
+  libertybell:
+    description: Run the non-destructive Liberty Bell celebration.
+    usage: /libertybell
+    permission: vaplus.event.liberty
+permissions:
+  vaplus.guide:
+    default: true
+  vaplus.rules:
+    default: true
+  vaplus.report:
+    default: true
+  vaplus.staff.reports:
+    default: op
+  vaplus.staff.resolve:
+    default: op
+  vaplus.admin.reload:
+    default: op
+  vaplus.event.liberty:
+    default: op
+  vaplus.cosmetic.supporter:
+    default: false
+
